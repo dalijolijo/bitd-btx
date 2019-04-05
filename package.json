@@ -1,7 +1,7 @@
 {
-  "name": "bitd",
+  "name": "bitd-btx",
   "version": "0.2.1",
-  "description": "decentralized autonomous database over bitcoin",
+  "description": "decentralized autonomous database over bitcore",
   "main": "index.js",
   "author": "21 Century Motor Company",
   "license": "MIT",
@@ -21,7 +21,7 @@
     "mongodb": "^3.1.4",
     "p-limit": "^2.0.0",
     "p-queue": "^3.0.0",
-    "tna": "0.1.2",
+    "tna-btx": "github:dalijolijo/tna-btx",
     "traverse": "^0.6.6",
     "zeromq": "^4.6.0"
   },

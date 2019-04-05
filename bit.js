@@ -1,6 +1,6 @@
 const zmq = require('zeromq')
 const RpcClient = require('bitcoind-rpc')
-const TNA = require('tna')
+const TNA = require('tna-btx')
 const pLimit = require('p-limit')
 const pQueue = require('p-queue')
 const Config = require('./config.js')
@@ -196,7 +196,7 @@ const sync = async function(type, hash) {
 
         // zmq broadcast
         let b = { i: index, txs: content }
-        console.log('Zmq block = ', JSON.stringify(b, null, 2))
+        //console.log('Zmq block = ', JSON.stringify(b, null, 2))
         outsock.send(['block', JSON.stringify(b)])
       }
 
@@ -225,13 +225,13 @@ const sync = async function(type, hash) {
       let content = await request.tx(hash)
       try {
         await Db.mempool.insert(content)
-        console.log('# Q inserted [size: ' + queue.size + ']',  hash)
+        //console.log('# Q inserted [size: ' + queue.size + ']',  hash)
         console.log(content)
         outsock.send(['mempool', JSON.stringify(content)])
       } catch (e) {
         // duplicates are ok because they will be ignored
         if (e.code == 11000) {
-          console.log('Duplicate mempool item: ', content)
+          //console.log('Duplicate mempool item: ', content)
         } else {
           console.log('## ERR ', e, content)
           process.exit()

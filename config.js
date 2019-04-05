@@ -3,13 +3,13 @@ module.exports = {
   'rpc': {
     'protocol': 'http',
     'user': process.env.rpc_user ? process.env.rpc_user : 'root',
-    'pass': process.env.rpc_pass ? process.env.rpc_pass : 'bitcoin',
+    'pass': process.env.rpc_pass ? process.env.rpc_pass : 'bitcore',
     'host': process.env.host ? process.env.host : ip.address(),
-    'port': '8332',
+    'port': '8556',
     'limit': 15
   },
   'db': {
-    'name': 'bitdb',
+    'name': 'bitdb-btx',
     'url': 'mongodb://localhost:27017',
     'index': {
       'confirmed': {
@@ -39,11 +39,11 @@ module.exports = {
   'zmq': {
     'incoming': {
       'host': process.env.host ? process.env.host : ip.address(),
-      'port': '28332'
+      'port': '28556'
     },
     'outgoing': {
       'host': '0.0.0.0',
-      'port': '28339'
+      'port': '28555'
     }
   }
 }
