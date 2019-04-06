@@ -10,7 +10,7 @@ module.exports = {
   },
   'db': {
     'name': 'bitdb-btx',
-    'url': 'mongodb://localhost:27017',
+    'url': process.env.MONGODB_URL ? process.env.MONGODB_URL : 'mongodb://localhost:27017',
     'index': {
       'confirmed': {
         'keys': [
