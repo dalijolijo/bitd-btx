@@ -4,7 +4,7 @@ module.exports = {
     'protocol': 'http',
     'user': process.env.rpc_user ? process.env.rpc_user : 'root',
     'pass': process.env.rpc_pass ? process.env.rpc_pass : 'bitcore',
-    'host': process.env.host ? process.env.host : ip.address(),
+    'host': process.env.RPC_HOST ? process.env.RPC_HOST : ip.address(),
     'port': '8556',
     'limit': 15
   },
